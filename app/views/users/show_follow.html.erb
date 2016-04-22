@@ -20,10 +20,18 @@
   </aside>
   <div class="col-md-8">
     <h3><%= @title %></h3>
-    <% if @users.any? %>
-      <ul class="users follow">
-        <%= render @users %>
-      </ul>
-    <% end %>
+         <% if @users.any? %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <h1>
+              <%= link_to gravatar_for(user, size: 70), user %>
+              <div>
+                <%= user.name %>
+              </div>
+            </h1>
+            <hr>
+          <% end %>
+        </div>
+      <% end %>
   </div>
 </div>
