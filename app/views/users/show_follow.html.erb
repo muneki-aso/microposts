@@ -23,10 +23,9 @@
     <% if @users.any? %>
       <ul class="users follow">
         <%= render @users %>
-        <%= paginate @users %>
       </ul>
     <% end %>
-         <% if @users.any? %>
+      <% if @users.any? %>
         <div class="user_avatars">
           <% @users.each do |user| %>
             <h1>
@@ -37,6 +36,7 @@
             </h1>
             <hr>
           <% end %>
+          <%= paginate @users %>
         </div>
       <% end %>
   </div>
