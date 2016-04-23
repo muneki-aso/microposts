@@ -26,5 +26,18 @@
         <%= paginate @users %>
       </ul>
     <% end %>
+         <% if @users.any? %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <h1>
+              <%= link_to gravatar_for(user, size: 70), user %>
+              <div>
+                <%= user.name %>
+              </div>
+            </h1>
+            <hr>
+          <% end %>
+        </div>
+      <% end %>
   </div>
 </div>
